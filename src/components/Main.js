@@ -29,6 +29,9 @@ const Container = styled.div`
 	}
 	@media (max-width: 768px) {
 		flex-direction: column;
+		div {
+			padding: 0;
+		}
 	}
 `;
 
@@ -44,7 +47,7 @@ const Title = styled.h1`
 	font-size: 8.5vmax;
 	color: #35495e;
 	letter-spacing: 1px;
-	margin-bottom: 0;
+	margin: 0;
 `;
 
 const Subtitle = styled.h2`

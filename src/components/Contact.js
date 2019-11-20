@@ -9,10 +9,10 @@ const Contact = () => (
 			<p className="contact-subtitle">Reach me here</p>
 			<IconContainer className="contact-icon-container">
 				<a href="https://www.linkedin.com/in/phil-owen" target="_blank" rel="noopener noreferrer">
-					<FontAwesomeIcon icon={['fab', 'linkedin-in']} color="white" size="2x" />
+					<FontAwesomeIcon icon={['fab', 'linkedin-in']} color="white" size="1x" />
 				</a>
 				<a href="mailto:owen.philipb@gmail.com">
-					<FontAwesomeIcon icon="envelope" color="white" size="2x" />
+					<FontAwesomeIcon icon="envelope" color="white" size="1x" />
 				</a>
 			</IconContainer>
 		</SectionTitle>
