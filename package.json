@@ -35,9 +35,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"homepage": "https://philip-owen.github.io/portfolio",
-	"devDependencies": {
-		"gh-pages": "^2.1.1"
 	}
 }
