@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = () => (
 	<Container>
-		<p>Copyright © Phil Owen 2019</p>
+		<p>Copyright © Philip Owen 2019</p>
 	</Container>
 );
 
