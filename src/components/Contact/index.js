@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import ContactForm from './ContactForm';
+
 const Contact = () => (
 	<Container id="contact">
 		<SectionTitle>
 			<h2>Contact</h2>
-			<p className="contact-subtitle">Reach me here</p>
+			<ContactForm />
+			<p className="contact-subtitle">You can also reach me here</p>
 			<IconContainer className="contact-icon-container">
 				<a href="https://www.linkedin.com/in/phil-owen" target="_blank" rel="noopener noreferrer">
 					<FontAwesomeIcon icon={['fab', 'linkedin-in']} color="white" size="1x" />
@@ -23,7 +26,6 @@ const Container = styled.div`
 	background-color: #35495e;
 	color: white;
 	width: 100%;
-	height: 50vh;
 	padding: 90px 50px;
 	.contact-subtitle {
 		text-decoration: underline;
@@ -44,8 +46,8 @@ const IconContainer = styled.div`
 `;
 
 const SectionTitle = styled.div`
-	font-size: 40px;
 	text-align: center;
+  font-size: 40px;
 	h2 {
 		margin-top: 0;
 	}
