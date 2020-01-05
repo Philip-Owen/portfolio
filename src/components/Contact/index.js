@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import ContactForm from './ContactForm';
 
 const Contact = () => (
 	<Container id="contact">
 		<SectionTitle>
 			<h2>Contact</h2>
-			<ContactForm />
-			<p className="contact-subtitle">You can also reach me here</p>
+			<p className="contact-subtitle">Reach me at the links below</p>
 			<IconContainer className="contact-icon-container">
 				<a href="https://www.linkedin.com/in/phil-owen" target="_blank" rel="noopener noreferrer">
 					<FontAwesomeIcon icon={['fab', 'linkedin-in']} color="white" size="1x" />
