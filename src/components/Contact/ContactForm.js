@@ -25,7 +25,8 @@ const ContactForm = () => {
 	}
 
 	const resetCaptcha = () => {
-		setVerified(false)
+		window.grecaptcha.reset();
+		setVerified(false);
 	}
 
 	const postForm = async data => {
@@ -37,8 +38,10 @@ const ContactForm = () => {
 					body: JSON.stringify(data),
 				});
 				formReset();
+				resetCaptcha();
 			} catch (e) {
 				setError(true);
+				resetCaptcha();
 			}
 		} else {
 			setCaptchaError("Please confirm the CAPTCHA below")
