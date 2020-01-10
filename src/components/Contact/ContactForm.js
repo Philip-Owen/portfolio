@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import styled from 'styled-components';
 
 const ContactForm = () => {
@@ -7,6 +8,8 @@ const ContactForm = () => {
 	const [message, setMessage] = useState('');
 	const [error, setError] = useState(false);
 	const [msgSent, setMsgSent] = useState(false);
+	const [verified, setVerified] = useState(false)
+	const [captchaError, setCaptchaError] = useState('')
 
 	const formReset = () => {
 		setName('');
@@ -14,18 +17,31 @@ const ContactForm = () => {
 		setMessage('');
 		setError(false);
 		setMsgSent(true);
+		setCaptchaError('');
 	};
 
+	const handleCaptchaChange = () => {
+		setVerified(true)
+	}
+
+	const resetCaptcha = () => {
+		setVerified(false)
+	}
+
 	const postForm = async data => {
-		try {
-			await fetch('https://45z5nk3fmf.execute-api.us-east-1.amazonaws.com/prod/', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(data),
-			});
-			formReset();
-		} catch (e) {
-			setError(true);
+		if (verified) {
+			try {
+				await fetch('https://45z5nk3fmf.execute-api.us-east-1.amazonaws.com/prod/', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(data),
+				});
+				formReset();
+			} catch (e) {
+				setError(true);
+			}
+		} else {
+			setCaptchaError("Please confirm the CAPTCHA below")
 		}
 	};
 
@@ -54,6 +70,17 @@ const ContactForm = () => {
 					placeholder="Your message"
 					required
 				></textarea>
+				{ captchaError.length > 0 ?
+					<ErrorMsg>
+						{captchaError}
+					</ErrorMsg> 
+					: null
+				}
+				<ReCAPTCHA
+					sitekey="6Lf09MwUAAAAAPQd5zCfQhfK2jVEMMfT-ZM05CLg"
+					onChange={handleCaptchaChange}
+					onExpired={resetCaptcha}
+				/>
 				<button>Submit</button>
 				{msgSent ? <h3>Message Sent!</h3> : null}
 				{error ? (
