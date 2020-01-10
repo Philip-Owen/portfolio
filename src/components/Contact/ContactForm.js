@@ -29,6 +29,10 @@ const ContactForm = () => {
 		setVerified(false);
 	}
 
+	const captchaTimeout = () => {
+		setVerified(false);
+	}
+
 	const postForm = async data => {
 		if (verified) {
 			try {
@@ -82,7 +86,7 @@ const ContactForm = () => {
 				<ReCAPTCHA
 					sitekey="6Lf09MwUAAAAAPQd5zCfQhfK2jVEMMfT-ZM05CLg"
 					onChange={handleCaptchaChange}
-					onExpired={resetCaptcha}
+					onExpired={captchaTimeout}
 				/>
 				<button>Submit</button>
 				{msgSent ? <h3>Message Sent!</h3> : null}
