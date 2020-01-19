@@ -9,7 +9,7 @@ const RepoContainer = props => {
 		<Container>
 			{props.loaded ? (
 				props.repos.length > 0 ? (
-					props.repos.map(({node}) => <Repo repo={node} key={node.id} />)
+					props.repos.map(repo => <Repo repo={repo} key={repo.id} />)
 				) : (
 					<Error />
 				)
