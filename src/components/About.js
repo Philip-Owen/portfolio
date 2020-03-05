@@ -10,7 +10,7 @@ const About = () => (
       <p className="section-subtitle">Who Am I?</p>
       <p>
         I'm a Software Developer and IT professional currently working in the
-        networking field. I've worked on everything from builing static websites
+        networking field. I've worked on everything from building static websites
         with HTML, CSS, and JavaScript to configuring routing protocols to allow
         internet access for the crew of an aircraft carrier. I have a passion
         for learning and I am constantly diving in and exploring new
