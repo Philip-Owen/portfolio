@@ -3,16 +3,18 @@
     font-size: 18px;
     text-align: center;
   }
-  h2 {
-    margin-top: 0;
-    font-size: 40px;
-    text-align: center;
-  }
   #about {
     background-color: #35495e;
     color: white;
     width: 100%;
     padding: 90px 50px;
+  } 
+  .section-title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .section-title > h2 {
+    margin-top: 0;
   }
   .section-subtitle {
     text-decoration: underline;
@@ -24,7 +26,7 @@
 </style>
 
 <div id="about">
-  <div>
+  <div class="section-title">
     <h2>About</h2>
   </div>
   <div>
