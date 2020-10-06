@@ -12,6 +12,11 @@
   function msgSent() {
     sent = true;
   }
+  function resetForm() {
+      contact.name = ''
+      contact.email = ''
+      contact.message = ''
+  }
   async function handleSubmit() {
     try {
       await fetch(
@@ -24,6 +29,7 @@
       );
       resetError();
       msgSent();
+      resetForm();
     } catch (e) {
       console.log(e);
       error = true;
